@@ -18,6 +18,7 @@ function App() {
   const [choiceTwo, setChoiceTwo] = useState(null);
   const [disabled, setDisabled] = useState(false);
 
+  // Duplication of images and getting random id
   const shuffleCards = () => {
     const shuffledCards = [...cardImages, ...cardImages]
       .sort(() => Math.random() - 0.5)
@@ -29,6 +30,8 @@ function App() {
     setCards(shuffledCards);
     setTurns(0);
   };
+  //
+
 
   // handle a choice
   const handleChoice = (card) => {
@@ -56,6 +59,7 @@ function App() {
       }
     }
   }, [choiceOne, choiceTwo]);
+  //
 
   // rest choices & increses turn
   const resetTurn = () => {
@@ -68,7 +72,7 @@ function App() {
   useEffect(() => {
     shuffleCards();
   }, []);
-
+  //
   return (
     <div className="App">
       <h1>memory game</h1>
